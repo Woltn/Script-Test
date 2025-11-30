@@ -129,7 +129,7 @@ mini.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- black
 mini.Font = "SourceSans"
 mini.Size = UDim2.new(0, 45, 0, 28)
 mini.Text = "-"
-miini.TextColor3 = Color3.fromRGB(255, 255, 255)
+mini.TextColor3 = Color3.fromRGB(255, 255, 255)
 mini.TextSize = 40
 mini.Position = UDim2.new(0, 44, -1, 27)
 
@@ -139,7 +139,7 @@ mini2.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- black
 mini2.Font = "SourceSans"
 mini2.Size = UDim2.new(0, 45, 0, 28)
 mini2.Text = "+"
-miini2.TextColor3 = Color3.fromRGB(255, 255, 255)
+mini2.TextColor3 = Color3.fromRGB(255, 255, 255)
 mini2.TextSize = 40
 mini2.Position = UDim2.new(0, 44, -1, 57)
 mini2.Visible = false
