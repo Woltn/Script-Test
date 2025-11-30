@@ -1,1 +1,2 @@
 -- Fly Script By Woltn, Paste This Whole Thing Into Your Executer 👇
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Woltn/Script-Test/refs/heads/main/Woltns-Script"))()
