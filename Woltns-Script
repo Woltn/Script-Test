@@ -15,32 +15,13 @@ Woltns Fly Script
 ----------------------------------------------------------------------------
 
 ]]
-local main = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local up = Instance.new("TextButton")
-local down = Instance.new("TextButton")
-local onof = Instance.new("TextButton")
-local TextLabel = Instance.new("TextLabel")
-local plus = Instance.new("TextButton")
-local speed = Instance.new("TextLabel")
-local mine = Instance.new("TextButton")
-local closebutton = Instance.new("TextButton")
-local mini = Instance.new("TextButton")
-local mini2 = Instance.new("TextButton")
-
-main.Name = "main"
-main.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-main.ResetOnSpawn = false
-
 -- Main Frame
 Frame.Parent = main
 Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- dark grey
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0) -- black border
 Frame.Position = UDim2.new(0.1, 0, 0.38, 0)
-Frame.Size = UDim2.new(0, 200, 0, 80)
+Frame.Size = UDim2.new(0, 330, 0, 80)
 Frame.ClipsDescendants = true
-Frame.AnchorPoint = Vector2.new(0,0)
 
 -- Title Label
 TextLabel.Parent = Frame
@@ -48,79 +29,87 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- black
 TextLabel.Position = UDim2.new(0, 0, 0, 0)
 TextLabel.Size = UDim2.new(1, 0, 0, 28)
 TextLabel.Font = Enum.Font.SourceSansBold
-TextLabel.Text = "Fly Script By Woltn"
+TextLabel.Text = "Fly Script By Watson"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- white
 TextLabel.TextScaled = true
 TextLabel.TextWrapped = true
 
+-- Button parameters
+local buttonSize = UDim2.new(0, 50, 0, 28)
+local buttonY = 35
+local spacing = 10
+
 -- UP Button
 up.Name = "up"
 up.Parent = Frame
-up.BackgroundColor3 = Color3.fromRGB(200, 200, 200) -- light grey
-up.Size = UDim2.new(0, 44, 0, 28)
-up.Position = UDim2.new(0.05, 0, 0.4, 0)
+up.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+up.Position = UDim2.new(0, spacing, 0, buttonY)
+up.Size = buttonSize
 up.Font = Enum.Font.SourceSans
 up.Text = "UP"
 up.TextColor3 = Color3.fromRGB(0, 0, 0)
-up.TextSize = 14
+up.TextScaled = true
+up.TextWrapped = true
 
 -- DOWN Button
 down.Name = "down"
 down.Parent = Frame
 down.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-down.Size = UDim2.new(0, 44, 0, 28)
-down.Position = UDim2.new(0.05, 0, 0.65, 0)
+down.Position = UDim2.new(0, spacing*2 + buttonSize.X.Offset, 0, buttonY)
+down.Size = buttonSize
 down.Font = Enum.Font.SourceSans
 down.Text = "DOWN"
 down.TextColor3 = Color3.fromRGB(0, 0, 0)
-down.TextSize = 14
+down.TextScaled = true
+down.TextWrapped = true
 
--- Fly Toggle
-onof.Name = "onof"
-onof.Parent = Frame
-onof.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-onof.Position = UDim2.new(0.7, 0, 0.65, 0)
-onof.Size = UDim2.new(0, 56, 0, 28)
-onof.Font = Enum.Font.SourceSans
-onof.Text = "Fly"
-onof.TextColor3 = Color3.fromRGB(0, 0, 0)
-onof.TextSize = 14
-
--- Plus Button
-plus.Name = "plus"
-plus.Parent = Frame
-plus.BackgroundColor3 = Color3.fromRGB(150, 150, 150) -- slightly darker grey
-plus.Position = UDim2.new(0.25, 0, 0.05, 0)
-plus.Size = UDim2.new(0, 45, 0, 28)
-plus.Font = Enum.Font.SourceSans
-plus.Text = "+"
-plus.TextColor3 = Color3.fromRGB(0, 0, 0)
-plus.TextScaled = true
-plus.TextWrapped = true
-
--- Minus Button
+-- MINUS Button
 mine.Name = "mine"
 mine.Parent = Frame
-mine.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
-mine.Position = UDim2.new(0.25, 0, 0.65, 0)
-mine.Size = UDim2.new(0, 45, 0, 28)
+mine.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+mine.Position = UDim2.new(0, spacing*3 + buttonSize.X.Offset*2, 0, buttonY)
+mine.Size = buttonSize
 mine.Font = Enum.Font.SourceSans
 mine.Text = "-"
 mine.TextColor3 = Color3.fromRGB(0, 0, 0)
 mine.TextScaled = true
 mine.TextWrapped = true
 
--- Speed Display
+-- PLUS Button
+plus.Name = "plus"
+plus.Parent = Frame
+plus.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+plus.Position = UDim2.new(0, spacing*4 + buttonSize.X.Offset*3, 0, buttonY)
+plus.Size = buttonSize
+plus.Font = Enum.Font.SourceSans
+plus.Text = "+"
+plus.TextColor3 = Color3.fromRGB(0, 0, 0)
+plus.TextScaled = true
+plus.TextWrapped = true
+
+-- SPEED Display
 speed.Name = "speed"
 speed.Parent = Frame
-speed.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-speed.Position = UDim2.new(0.48, 0, 0.65, 0)
-speed.Size = UDim2.new(0, 44, 0, 28)
+speed.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
+speed.Position = UDim2.new(0, spacing*5 + buttonSize.X.Offset*4, 0, buttonY)
+speed.Size = buttonSize
 speed.Font = Enum.Font.SourceSans
 speed.Text = "1"
-speed.TextColor3 = Color3.fromRGB(255, 255, 255)
+speed.TextColor3 = Color3.fromRGB(0, 0, 0)
 speed.TextScaled = true
 speed.TextWrapped = true
+
+-- FLY Toggle
+onof.Name = "onof"
+onof.Parent = Frame
+onof.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+onof.Position = UDim2.new(0, spacing*6 + buttonSize.X.Offset*5, 0, buttonY)
+onof.Size = buttonSize
+onof.Font = Enum.Font.SourceSans
+onof.Text = "Fly"
+onof.TextColor3 = Color3.fromRGB(0, 0, 0)
+onof.TextScaled = true
+onof.TextWrapped = true
 
 -- Close Button
 closebutton.Name = "Close"
