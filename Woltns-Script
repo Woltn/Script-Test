@@ -25,7 +25,7 @@ Frame.Parent = main
 Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- dark grey
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0) -- black
 Frame.Position = UDim2.new(0.100320168, 0, 0.379746825, 0)
-Frame.Size = UDim2.new(0, 190, 0, 57)
+Frame.Size = UDim2.new(0, 190, 0, 85) -- *** FIX: Increased Height to 85 ***
 
 -- Title
 TextLabel.Parent = Frame
@@ -41,24 +41,27 @@ TextLabel.TextWrapped = true
 -- Button size
 local btnWidth = 44
 local btnHeight = 28
+local titleHeight = 28 -- For calculation reference
+local row1Y = titleHeight
+local row2Y = titleHeight + btnHeight
 
--- UP Button
+-- UP Button (Row 1, Col 1)
 up.Name = "up"
 up.Parent = Frame
 up.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
 up.Size = UDim2.new(0, btnWidth, 0, btnHeight)
-up.Position = UDim2.new(0, 0, 0.5, -btnHeight)
+up.Position = UDim2.new(0, 0, 0, row1Y) -- *** FIX: Positioned at Y=28 ***
 up.Font = Enum.Font.SourceSans
 up.Text = "UP"
 up.TextColor3 = Color3.fromRGB(0, 0, 0)
 up.TextScaled = true
 up.TextWrapped = true
 
--- DOWN Button
+-- DOWN Button (Row 2, Col 1)
 down.Name = "down"
 down.Parent = Frame
 down.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-down.Position = UDim2.new(0, 0, 0.5, 0)
+down.Position = UDim2.new(0, 0, 0, row2Y) -- *** FIX: Positioned at Y=56 ***
 down.Size = UDim2.new(0, btnWidth, 0, btnHeight)
 down.Font = Enum.Font.SourceSans
 down.Text = "DOWN"
@@ -66,11 +69,11 @@ down.TextColor3 = Color3.fromRGB(0, 0, 0)
 down.TextScaled = true
 down.TextWrapped = true
 
--- MINUS Button
+-- MINUS Button (Row 2, Col 2)
 mine.Name = "mine"
 mine.Parent = Frame
 mine.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-mine.Position = UDim2.new(0.25, 0, 0.5, 0)
+mine.Position = UDim2.new(0, btnWidth, 0, row2Y) -- *** FIX: Positioned at X=44, Y=56 ***
 mine.Size = UDim2.new(0, btnWidth, 0, btnHeight)
 mine.Font = Enum.Font.SourceSans
 mine.Text = "-"
@@ -78,11 +81,11 @@ mine.TextColor3 = Color3.fromRGB(0, 0, 0)
 mine.TextScaled = true
 mine.TextWrapped = true
 
--- PLUS Button
+-- PLUS Button (Row 1, Col 2)
 plus.Name = "plus"
 plus.Parent = Frame
 plus.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-plus.Position = UDim2.new(0.25, 0, 0, 0)
+plus.Position = UDim2.new(0, btnWidth, 0, row1Y) -- *** FIX: Positioned at X=44, Y=28 ***
 plus.Size = UDim2.new(0, btnWidth, 0, btnHeight)
 plus.Font = Enum.Font.SourceSans
 plus.Text = "+"
@@ -90,11 +93,11 @@ plus.TextColor3 = Color3.fromRGB(0, 0, 0)
 plus.TextScaled = true
 plus.TextWrapped = true
 
--- SPEED Display
+-- SPEED Display (Row 1, Col 3)
 speed.Name = "speed"
 speed.Parent = Frame
 speed.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
-speed.Position = UDim2.new(0.5, 0, 0.5, 0)
+speed.Position = UDim2.new(0, btnWidth*2, 0, row1Y) -- *** FIX: Positioned at X=88, Y=28 ***
 speed.Size = UDim2.new(0, btnWidth, 0, btnHeight)
 speed.Font = Enum.Font.SourceSans
 speed.Text = "1"
@@ -102,11 +105,11 @@ speed.TextColor3 = Color3.fromRGB(0, 0, 0)
 speed.TextScaled = true
 speed.TextWrapped = true
 
--- FLY Toggle
+-- FLY Toggle (Row 2, Col 3)
 onof.Name = "onof"
 onof.Parent = Frame
 onof.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-onof.Position = UDim2.new(0.7, 0, 0.5, 0)
+onof.Position = UDim2.new(0, btnWidth*2, 0, row2Y) -- *** FIX: Positioned at X=88, Y=56 ***
 onof.Size = UDim2.new(0, btnWidth, 0, btnHeight)
 onof.Font = Enum.Font.SourceSans
 onof.Text = "Fly"
@@ -123,7 +126,7 @@ closebutton.Size = UDim2.new(0, 45, 0, 28)
 closebutton.Text = "X"
 closebutton.TextColor3 = Color3.fromRGB(255, 255, 255)
 closebutton.TextSize = 30
-closebutton.Position = UDim2.new(0, 0, -1, 27)
+closebutton.Position = UDim2.new(0, 190 - 45, 0, 0) -- *** FIX: Positioned top-right of the Frame (Title bar) ***
 
 -- Minimize Buttons
 mini.Name = "minimize"
@@ -134,7 +137,7 @@ mini.Size = UDim2.new(0, 45, 0, 28)
 mini.Text = "-"
 mini.TextColor3 = Color3.fromRGB(255, 255, 255)
 mini.TextSize = 40
-mini.Position = UDim2.new(0, 44, -1, 27)
+mini.Position = UDim2.new(0, 190 - 90, 0, 0) -- *** FIX: Positioned next to Close on the Title bar ***
 
 mini2.Name = "minimize2"
 mini2.Parent = main.Frame
@@ -144,7 +147,7 @@ mini2.Size = UDim2.new(0, 45, 0, 28)
 mini2.Text = "+"
 mini2.TextColor3 = Color3.fromRGB(255, 255, 255)
 mini2.TextSize = 40
-mini2.Position = UDim2.new(0, 44, -1, 57)
+mini2.Position = UDim2.new(0, 190 - 45, 0, 0) -- *** FIX: Aligned with Close, but hidden ***
 mini2.Visible = false
 
 speeds = 1
