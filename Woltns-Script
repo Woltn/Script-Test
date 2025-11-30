@@ -1,1 +1,13 @@
-testing 123
+local gui = Instance.new("ScreenGui")
+gui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local label = Instance.new("TextLabel")
+label.Parent = gui
+label.Size = UDim2.new(0, 300, 0, 50)
+label.Position = UDim2.new(0.5, -150, 0.1, 0) -- centered horizontally
+label.BackgroundTransparency = 0.3
+label.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.Font = Enum.Font.SourceSansBold
+label.TextScaled = true
+label.Text = "Woltn's Script"
