@@ -15,36 +15,39 @@ Woltns Fly Script
 ----------------------------------------------------------------------------
 
 ]]
+main.Name = "main"
+main.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+main.ResetOnSpawn = false
+
 -- Main Frame
 Frame.Parent = main
 Frame.BackgroundColor3 = Color3.fromRGB(40, 40, 40) -- dark grey
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0) -- black border
-Frame.Position = UDim2.new(0.1, 0, 0.38, 0)
-Frame.Size = UDim2.new(0, 330, 0, 80)
-Frame.ClipsDescendants = true
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0) -- black
+Frame.Position = UDim2.new(0.100320168, 0, 0.379746825, 0)
+Frame.Size = UDim2.new(0, 190, 0, 57)
 
--- Title Label
+-- Title
 TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- black
-TextLabel.Position = UDim2.new(0, 0, 0, 0)
-TextLabel.Size = UDim2.new(1, 0, 0, 28)
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.Position = UDim2.new(0.05, 0, 0, 0)
+TextLabel.Size = UDim2.new(0.9, 0, 0, 28)
 TextLabel.Font = Enum.Font.SourceSansBold
 TextLabel.Text = "Fly Script By Watson"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- white
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
 TextLabel.TextWrapped = true
 
--- Button parameters
-local buttonSize = UDim2.new(0, 50, 0, 28)
-local buttonY = 35
-local spacing = 10
+-- Button size
+local btnWidth = 44
+local btnHeight = 28
 
 -- UP Button
 up.Name = "up"
 up.Parent = Frame
 up.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-up.Position = UDim2.new(0, spacing, 0, buttonY)
-up.Size = buttonSize
+up.Size = UDim2.new(0, btnWidth, 0, btnHeight)
+up.Position = UDim2.new(0, 0, 0.5, -btnHeight)
 up.Font = Enum.Font.SourceSans
 up.Text = "UP"
 up.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -55,8 +58,8 @@ up.TextWrapped = true
 down.Name = "down"
 down.Parent = Frame
 down.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-down.Position = UDim2.new(0, spacing*2 + buttonSize.X.Offset, 0, buttonY)
-down.Size = buttonSize
+down.Position = UDim2.new(0, 0, 0.5, 0)
+down.Size = UDim2.new(0, btnWidth, 0, btnHeight)
 down.Font = Enum.Font.SourceSans
 down.Text = "DOWN"
 down.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -67,8 +70,8 @@ down.TextWrapped = true
 mine.Name = "mine"
 mine.Parent = Frame
 mine.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-mine.Position = UDim2.new(0, spacing*3 + buttonSize.X.Offset*2, 0, buttonY)
-mine.Size = buttonSize
+mine.Position = UDim2.new(0.25, 0, 0.5, 0)
+mine.Size = UDim2.new(0, btnWidth, 0, btnHeight)
 mine.Font = Enum.Font.SourceSans
 mine.Text = "-"
 mine.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -79,8 +82,8 @@ mine.TextWrapped = true
 plus.Name = "plus"
 plus.Parent = Frame
 plus.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-plus.Position = UDim2.new(0, spacing*4 + buttonSize.X.Offset*3, 0, buttonY)
-plus.Size = buttonSize
+plus.Position = UDim2.new(0.25, 0, 0, 0)
+plus.Size = UDim2.new(0, btnWidth, 0, btnHeight)
 plus.Font = Enum.Font.SourceSans
 plus.Text = "+"
 plus.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -91,8 +94,8 @@ plus.TextWrapped = true
 speed.Name = "speed"
 speed.Parent = Frame
 speed.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
-speed.Position = UDim2.new(0, spacing*5 + buttonSize.X.Offset*4, 0, buttonY)
-speed.Size = buttonSize
+speed.Position = UDim2.new(0.5, 0, 0.5, 0)
+speed.Size = UDim2.new(0, btnWidth, 0, btnHeight)
 speed.Font = Enum.Font.SourceSans
 speed.Text = "1"
 speed.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -103,8 +106,8 @@ speed.TextWrapped = true
 onof.Name = "onof"
 onof.Parent = Frame
 onof.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
-onof.Position = UDim2.new(0, spacing*6 + buttonSize.X.Offset*5, 0, buttonY)
-onof.Size = buttonSize
+onof.Position = UDim2.new(0.7, 0, 0.5, 0)
+onof.Size = UDim2.new(0, btnWidth, 0, btnHeight)
 onof.Font = Enum.Font.SourceSans
 onof.Text = "Fly"
 onof.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -115,33 +118,33 @@ onof.TextWrapped = true
 closebutton.Name = "Close"
 closebutton.Parent = main.Frame
 closebutton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-closebutton.Size = UDim2.new(0, 45, 0, 28)
-closebutton.Position = UDim2.new(0, 0, -1, 27)
 closebutton.Font = Enum.Font.SourceSansBold
+closebutton.Size = UDim2.new(0, 45, 0, 28)
 closebutton.Text = "X"
 closebutton.TextColor3 = Color3.fromRGB(255, 255, 255)
-closebutton.TextSize = 20
+closebutton.TextSize = 30
+closebutton.Position = UDim2.new(0, 0, -1, 27)
 
 -- Minimize Buttons
 mini.Name = "minimize"
 mini.Parent = main.Frame
 mini.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-mini.Size = UDim2.new(0, 45, 0, 28)
-mini.Position = UDim2.new(0, 44, -1, 27)
 mini.Font = Enum.Font.SourceSansBold
+mini.Size = UDim2.new(0, 45, 0, 28)
 mini.Text = "-"
 mini.TextColor3 = Color3.fromRGB(255, 255, 255)
-mini.TextSize = 30
+mini.TextSize = 40
+mini.Position = UDim2.new(0, 44, -1, 27)
 
 mini2.Name = "minimize2"
 mini2.Parent = main.Frame
 mini2.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-mini2.Size = UDim2.new(0, 45, 0, 28)
-mini2.Position = UDim2.new(0, 44, -1, 57)
 mini2.Font = Enum.Font.SourceSansBold
+mini2.Size = UDim2.new(0, 45, 0, 28)
 mini2.Text = "+"
 mini2.TextColor3 = Color3.fromRGB(255, 255, 255)
-mini2.TextSize = 30
+mini2.TextSize = 40
+mini2.Position = UDim2.new(0, 44, -1, 57)
 mini2.Visible = false
 
 speeds = 1
