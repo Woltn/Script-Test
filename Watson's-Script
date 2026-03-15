@@ -10,7 +10,7 @@ Watson's Fly Script
   IMPORTANT:
   You must copy and use the FULL script below. Do NOT press on the link.:
 
-  loadstring(game:HttpGet("https://raw.githubusercontent.com/Woltn/Script-Test/refs/heads/main/Woltns-Script", true))()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/Woltn/Script-Test/refs/heads/main/Watson's-Script", true))()
 ----------------------------------------------------------------------------
 ]]
 
